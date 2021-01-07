@@ -331,10 +331,11 @@ open class DTPagerController: UIViewController, UIScrollViewDelegate {
                 if let _ = indices.firstIndex(of: index) {
                     // Add to call viewDidLoad if needed
                     pageScrollView.addSubview(viewController.view)
-                    viewController.view.frame = frameForChildViewController(at: index, numberOfPages: numberOfPages)
 
                     // This will call viewWillAppear
                     addChild(viewController)
+                  
+                    viewController.view.frame = frameForChildViewController(at: index, numberOfPages: numberOfPages)
 
                     // This will call viewDidAppear
                     viewController.didMove(toParent: self)
